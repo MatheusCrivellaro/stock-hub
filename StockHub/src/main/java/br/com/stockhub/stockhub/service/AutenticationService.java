@@ -38,7 +38,7 @@ public class AutenticationService {
         //Conferindo o codigo de resposta da requisição
         int responseCode = connection.getResponseCode();
         if (responseCode != HttpURLConnection.HTTP_OK) {
-            throw new IOException("Falha na autenticação: " + connection.getResponseMessage());
+            throw new IOException("Falha na autenticação: " + connection.toString());
         }
 
         //Coletando a String do JSON de resposta

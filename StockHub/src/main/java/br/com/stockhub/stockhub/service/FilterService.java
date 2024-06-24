@@ -15,11 +15,11 @@ public class FilterService {
     private BasicsActionService service;
 
     public List<Veiculo> filterByCor(String cor, String cnpj, String token) throws IOException {
-        return service.getStock(cnpj, token).getVeiculo().stream().filter(veiculo -> veiculo.getCor().equalsIgnoreCase(cor)).toList();
+        return service.getStock(cnpj, token).stream().filter(veiculo -> veiculo.getCor().equalsIgnoreCase(cor)).toList();
     }
 
     public List<Veiculo> filterByMarca(String marca, String cnpj, String token) throws IOException {
-        return service.getStock(cnpj, token).getVeiculo().stream().filter(veiculo -> veiculo.getMarca().equalsIgnoreCase(marca)).toList();
+        return service.getStock(cnpj, token).stream().filter(veiculo -> veiculo.getMarca().equalsIgnoreCase(marca)).toList();
     }
 
 }

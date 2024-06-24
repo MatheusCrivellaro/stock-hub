@@ -18,12 +18,12 @@ public class BasicsActionService {
     @Autowired
     private AutenticationService autenticationService;
 
-    public Veiculos getStock(String cnpj, String token) throws IOException {
-        return stockService.getStock(cnpj, token).getResult().getVeiculos();
+    public List<Veiculo> getStock(String cnpj, String token) throws IOException {
+        return stockService.getStock(cnpj, token).getResult().getVeiculos().getVeiculo();
     }
 
     public List<String> marcasPresent(String cnpj, String token) throws IOException {
-        return getStock(cnpj, token).getVeiculo().stream().map(Veiculo::getMarca).toList();
+        return getStock(cnpj, token).stream().map(Veiculo::getMarca).toList();
     }
 
 }
